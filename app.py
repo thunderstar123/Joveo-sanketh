@@ -213,7 +213,7 @@ def render_sidebar():
             to answer questions from GitLab's public {config['label'].split(' ')[-1].lower()}.
 
             **Powered by:**
-            - 🧠 OpenRouter AI (Gemini 2.0 Flash)
+            - 🧠 OpenRouter AI
             - 📚 FAISS Vector Store
             - 🔍 Semantic Search
 
