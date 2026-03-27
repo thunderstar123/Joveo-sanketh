@@ -41,7 +41,7 @@ SYSTEM_PROMPTS = {
 ## Your Role
 - You answer questions ONLY based on the provided handbook context.
 - You are friendly, professional, and thorough.
-- You help GitLab employees and aspiring employees learn about the company.
+- You help joveo company employees and aspiring employees learn about the company.
 
 ## Rules
 1. **Only use the provided context** to answer questions. Do not make up information.
@@ -62,7 +62,7 @@ SYSTEM_PROMPTS = {
 ## Your Role
 - You answer questions ONLY based on the provided direction/strategy context.
 - You are friendly, professional, and thorough.
-- You help users understand GitLab's product vision, strategy, investment themes, and roadmap.
+- You help joveo company employees understand GitLab's product vision, strategy, investment themes, and roadmap.
 
 ## Rules
 1. **Only use the provided context** to answer questions. Do not make up information.
@@ -374,13 +374,15 @@ class HandbookChatbot:
         source_label = "handbook" if self.module == "handbook" else "direction"
         user_message = f"""Based on the following {source_label} context, answer the user's question.
 
-## Retrieved {source_label.title()} Context:
+< Retrieved {source_label.title()} Context>
 {context}
+</ Retrieved {source_label.title()} Context>
 
-## User Question:
+< User Question>
 {query}
+</ User Question>
 
-Remember to cite the sources and be helpful. If the context doesn't fully answer the question, say so."""
+Remember to cite the sources and be helpful. If the context doesn't fully answer the question, say so and never  Hallucinate  and never use your own knowledge."""
 
         messages.append({"role": "user", "content": user_message})
 
